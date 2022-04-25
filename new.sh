@@ -1,1 +1,2 @@
-sudo yum install redis
+#!/bin/bash
+sudo yum install httpd
