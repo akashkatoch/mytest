@@ -1,0 +1,37 @@
+name: testing workflow
+on: 
+  push:
+    branches: [master, main]
+
+  pull_request:
+    branches: [master, main]
+
+
+jobs:
+  aws_credentials:
+
+    runs-on: ubuntu-latest
+
+      steps:
+      - name: Checkout code from master branch
+        uses: actions/checkout@v2
+
+      - name: setting up credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_ID}}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY}}
+          aws-region: us-east-1
+
+      - name: Deploy amplify console with CF
+        uses: aws-actions/aws-cloudformation-github-deploy@v1.0.3
+        with:
+          name: github_testing.yaml
+          template: ec2_cf.yaml
+          no-fail-on-empty-changeset: 0
+          parameter-overrides: >-
+              Name=${{ steps.env-name.outputs.environment }},
+              Repository=https://github.com/${{ akashkatoch/gitrepo/main/ec2_cf.yaml }},
+              OauthToken=${{ secrets.AMPLIFY_TOKEN }},
+              
+      
