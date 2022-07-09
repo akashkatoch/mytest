@@ -37,5 +37,5 @@ jobs:
           no-fail-on-empty-changeset: 0
           parameter-overrides:
                 Name=${{ steps.env-name.outputs.environment }},
-                Repository=https://github.com/${{ akashkatoch/gitrepo/main/ec2_cf.yaml }},
+                Repository=https://github.com/akashkatoch/gitrepo/blob/main/ec2_cf.yaml,
                 OauthToken=${{ secrets.AMPLIFY_TOKEN }},
