@@ -1,4 +1,4 @@
-name: 'Deploy to AWS CloudFormation'
+name: 'Deploy to AWS CloudFormation 1st'
 
 on: 
   push:
