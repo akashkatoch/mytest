@@ -9,13 +9,13 @@ on:
 permissions:
   contents: read
 
-  #Defining Jobs
-  job:
-    Terraform_depl:
+
+  jobs:
+    terraform:
       name: Job deployment
       runs-on: ubuntu-latest
 
-        #Steps deployment
+ 
         steps:
           - name: checkout
             uses: actions/checkout@v2
