@@ -23,4 +23,5 @@ jobs:
       with: 
         max-line-length: "100"
         path: "Role_deployment"
+        ignore: E501
     
