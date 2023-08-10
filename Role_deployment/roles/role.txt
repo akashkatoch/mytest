@@ -1,0 +1,6 @@
+{
+    "role" : "admin",
+	"tenant": ["tnd-npn"],
+	"account": ["avm-cngmulti-2825"],
+	"members": ["akash_katoch@mckinsey.com"]
+}
