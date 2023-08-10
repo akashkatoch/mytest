@@ -1,0 +1,26 @@
+name: Role deployment
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - Role_deployment/**
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python Env
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.7
+
+    - name: flake8 linting
+      uses: py-actions/flake8@v2
+      with: 
+        max-line-length: "100"
+        path: "Role_deployment"
+    
