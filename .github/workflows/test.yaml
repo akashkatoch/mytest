@@ -1,0 +1,30 @@
+name: Assign user in AVM role
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - Role_deployment/test.txt
+
+jobs:
+  RoleMember:
+    runs-on: [ PlatformAccelerator , Linux ]
+    
+      
+    steps:
+    - name: checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup Python Env
+      uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install -r requirements.txt
+
+    - name: run Python code
+      run: |
+        pwd
+        role-members/role.py
