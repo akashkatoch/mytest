@@ -8,8 +8,7 @@ on:
 
 jobs:
   Build:
-    runs-on: [ PlatformAccelerator , Linux ]
-    
+    runs-on: [ PlatformAccelerator , Linux ]    
       
     steps:
     - name: checkout code
